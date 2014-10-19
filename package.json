@@ -1,0 +1,19 @@
+{
+    "author": "Richard Smith <richard@smith-net.org.uk>",
+    "homepage": "https://github.com/RickyBaby/EveSSO",
+    "name": "evesso",
+    "description": "An NodeJS module to utilize the eve-online SSO system.",
+    "version": "0.1.0",
+    "license": "MIT",
+    "main": "evesso.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RickyBaby/EveSSO"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "bugs": {
+        "url": "https://github.com/RickyBaby/EveSSO/issues"
+    },
+}
