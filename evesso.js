@@ -1,5 +1,5 @@
 /**
- * evesso.js - allow for access to the eve online singe sign on system
+ * evesso.js - allow for access to the eve online single sign on system
  *
  * @author Richard Smith <richard@smith-net.org.uk>
  * @copyright 2014 Richard Smith (Ricky Baby)
@@ -12,12 +12,12 @@
     //==============================================================================
 
     /**
-     * Perform the initial setup of the sso connector
+     * Perform the initialization - get dependencies, set defaults etc
      * @return void
      */
     var EveSSO = function() {
 
-        //core module dependancies
+        //core module dependencies
         this._modules = {
             'url'         : require('url'),
             'https'       : require('https'),
@@ -33,9 +33,20 @@
     };
 
     //==============================================================================
+    
 
     /**
-     * Set the user agent that we should use to identify ourselves to ccp
+     * Get an separate instance of the EveSSO system - useful for people running many applications
+     * @return object
+     */
+    EveSSO.prototype.EveSSO = function() {
+        return new this;
+    };
+
+    //==============================================================================
+
+    /**
+     * Set the user agent that we should use to identify ourselves to CCP
      * @param string callback_url  Required - The string to use as a user-agent in requests
      * @return self
      */
@@ -45,7 +56,7 @@
     };
 
     /**
-     * Get the user agent that we are using to identify ourselves to ccp
+     * Get the user agent that we are using to identify ourselves to CCP
      * @return string
      */
     EveSSO.prototype.getUserAgent = function() {
@@ -90,7 +101,7 @@
 
     /**
      * Set the "Callback URL" of the application - this is provided by CCP
-     * @param string callback_url  Required - The callback url as entered on the application page
+     * @param string callback_url  Required - The callback URL as entered on the application page
      * @return self
      */
     EveSSO.prototype.setCallbackURL = function(callback_url) {
@@ -123,7 +134,7 @@
     //==============================================================================
 
     /**
-     * Wrap the https method to make things a little more readable when making requests to the sso server
+     * Wrap the https.request() method to make things a little more readable when making requests to the eve-online login server
      * @param  {string}   request_url Required - 
      * @param  {object}   headers     Required - 
      * @param  {object}   parameters  Required - 
